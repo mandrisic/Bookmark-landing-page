@@ -1,0 +1,20 @@
+@use './variables' as *;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: $font;
+    font-size: $size;
+    width: 100%;
+}

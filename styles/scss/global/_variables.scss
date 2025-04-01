@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+//FONT 
+$font: 'Rubik', sans-serif;
+$size: 1.8rem;
+
+// COLORS 
+$darkBg: rgba(35, 42, 69, 0.95);
+$softBlue: hsl(231, 69%, 60%);
+$softRed: hsl(0, 94%, 66%);
+$grayishBlue: hsl(229, 8%, 60%);
+$veryDarkBlue: hsl(229, 31%, 21%);
+
+// BREAKPOINTS
+$breakpoints: (
+  "small": 20em,        // 320px
+  "tablet": 48em,       // 768px
+  "laptop": 64em,       // 1024px
+  "desktop": 90em       // 1440px
+);

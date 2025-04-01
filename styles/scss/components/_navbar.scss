@@ -1,0 +1,189 @@
+@use '../global/mixins' as *;
+@use '../global/variables' as *;
+
+header {
+    position: fixed;
+    padding: 2em 1.5em;
+    width: 100%;
+    height: 6.019em;
+    background-color: white;
+    transition: height 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    @include respond('tablet'){
+        height: 9.938em;
+        padding: 3.5em 5em;
+    }
+
+    @include respond('laptop'){
+        height: 7.688em;
+        padding: 2.5em 4.5em;
+    }
+
+    @include respond('desktop'){
+        padding: 3.5em 9.5em;
+    }
+
+    .nav-section {
+        width: 100%;
+        @include respond('tablet', 'laptop', 'desktop'){
+            @include flexTemplate(row, space-between, center);
+        }
+
+    }
+
+    .nav-icons {
+        @include flexTemplate(row, space-between, center);
+
+        #logo {
+            width: 8em;
+            height: auto;
+            transition: fill .3s ease-in;
+        }
+
+        #hamburger, #close {
+            width: 1em;
+            height: auto;
+            @include respond('tablet', 'laptop', 'desktop'){
+                display: none;
+            }
+        }
+    }
+
+    .nav {
+        opacity: 0;
+        display: none;
+        transition: opacity .3s;
+        @include respond('tablet', 'laptop', 'desktop'){
+            display: contents; 
+            opacity: 1;
+        }
+        
+        .ul {
+            @include flexTemplate(column, space-between, center);    
+            list-style-type: none;
+            @include respond('tablet'){
+                @include flexTemplate(row, space-between, center);
+                gap: 1.5em;
+            }
+
+            @include respond('laptop', 'desktop'){
+                gap: 2.8em;
+            }
+            &__item {
+                cursor: pointer;
+            }
+    
+            &__link {
+                text-transform: uppercase;
+                text-decoration: none;
+                color: $softBlue;
+                font-size: 1.4rem;
+                font-weight: 500;
+                transition: color .2s ease-in;
+                @include respond('tablet', 'laptop', 'desktop'){
+                    color: $grayishBlue;
+                }
+    
+                &:hover {
+                    color: $softRed;
+                }
+    
+                &.btn {
+                    padding: .5em 2em;
+                    border: .1em solid $softRed;
+                    font-family: $font;
+                    color: $softRed;
+                    border-radius: .3em;
+                    background-color: transparent;
+                    cursor: pointer;
+                    transition: background-color .2s ease-in;
+                    @include respond('tablet', 'laptop', 'desktop'){
+                        color: white;
+                        background-color: $softRed;
+                        &:hover {
+                            color: $softRed;
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-socials {
+        opacity: 0;
+        display: none;
+        transition: opacity .3s;
+    }
+
+    &.opened {
+        background-color: $darkBg;
+        height: 100vh;
+        width: 100%;
+        @include flexTemplate(column, space-between, center);
+
+        .nav-section {
+            width: 100%;
+        }
+
+        #logo path, #logo circle {
+            fill: white;
+        }
+
+        #logo #arrow {
+            fill: $veryDarkBlue;
+        }
+
+        .nav-icons {
+            @include flexTemplate(row, space-between, center);
+            border-bottom: 1px solid $grayishBlue;
+            width: 100%;
+            padding-bottom: 2em;
+        }
+
+        .nav {
+            @include flexTemplate(column, space-between, center);
+            position: relative;
+            opacity: .9;
+            width: 100%;
+
+            .ul {
+                width: 100%;
+            }
+
+            .ul__item {
+                padding: 1.2em 0;
+                border-bottom: 1px solid $grayishBlue;
+                width: 100%;
+                text-align: center;
+                &:last-of-type {
+                    border-bottom: none;
+                }
+            }
+            
+            .ul__link {
+                color: white;
+                font-size: 2rem;
+                letter-spacing: .2em;
+                font-weight: 400;
+
+                &.btn {
+                    border-color: white;
+                    width: 100%;
+                }
+            }
+        }
+
+        .nav-socials {
+            @include flexTemplate(row, center, center);
+            opacity: 1;
+            width: 100%;
+            gap: 2em;
+            height: 5em;
+        }
+    
+    }
+}
+
+.hidden {
+    display: none;
+}
