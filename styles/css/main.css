@@ -20,11 +20,241 @@ body {
 }
 
 .hero {
-  padding: 5.5em 0 2em 0;
+  width: 100%;
+  padding: 5.8em 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 48em) {
+  .hero {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8.5em 0 5em 5em;
+    gap: 1em;
+  }
+}
+@media (min-width: 64em) {
+  .hero {
+    padding: 8.5em 0 4.5em 4.5em;
+    gap: 2em;
+  }
+}
+@media (min-width: 90em) {
+  .hero {
+    padding: 10.5em 0 8em 8em;
+    gap: 4em;
+  }
+}
+.hero__img {
+  position: relative;
+  width: 100%;
+  padding: 2.2em 0.5em;
+}
+@media (min-width: 48em) {
+  .hero__img {
+    padding: 0 1.5em;
+    flex: 1;
+  }
+}
+@media (min-width: 64em) {
+  .hero__img {
+    padding: 0 1.5em;
+    flex: 1;
+  }
+}
+@media (min-width: 90em) {
+  .hero__img {
+    padding: 0 1.5em;
+    flex: 1;
+  }
+}
+@media (min-width: 64em) {
+  .hero__img .image {
+    width: 26em;
+    height: auto;
+  }
+}
+@media (min-width: 90em) {
+  .hero__img .image {
+    width: 36em;
+    height: auto;
+  }
+}
+.hero__img .shape {
+  position: absolute;
+  bottom: 2.2em;
+  right: 0;
+  z-index: -1;
+  background-color: hsl(231, 69%, 60%);
+  height: 60%;
+  width: 82%;
+  border-radius: 30em 0 0 30em;
+}
+@media (min-width: 48em) {
+  .hero__img .shape {
+    width: 72%;
+    bottom: -1em;
+  }
+}
+@media (min-width: 64em) {
+  .hero__img .shape {
+    height: 74%;
+    width: 72%;
+    bottom: -1.8em;
+  }
+}
+@media (min-width: 90em) {
+  .hero__img .shape {
+    height: 74%;
+    width: 72%;
+    bottom: -1.8em;
+  }
+}
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 2em;
+  gap: 1.2em;
+  color: hsl(229, 31%, 21%);
+  text-align: center;
+  width: 100%;
+}
+@media (min-width: 48em) {
+  .hero__text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+  }
+}
+@media (min-width: 64em) {
+  .hero__text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+  }
+}
+@media (min-width: 90em) {
+  .hero__text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+  }
+}
+.hero__text h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+@media (min-width: 48em) {
+  .hero__text h1 {
+    font-size: 3.2rem;
+  }
+}
+@media (min-width: 64em) {
+  .hero__text h1 {
+    font-size: 3.8rem;
+  }
+}
+@media (min-width: 90em) {
+  .hero__text h1 {
+    font-size: 4.8rem;
+  }
+}
+.hero__text p {
+  color: hsl(229, 8%, 60%);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+}
+@media (min-width: 64em) {
+  .hero__text p {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 90em) {
+  .hero__text p {
+    font-size: 1.85rem;
+  }
+}
+.hero__text .btns-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 0.5em;
+  padding: 0.5em 0;
+}
+@media (min-width: 48em) {
+  .hero__text .btns-container {
+    width: 90%;
+    gap: 1em;
+  }
+}
+@media (min-width: 64em) {
+  .hero__text .btns-container {
+    width: 86%;
+  }
+}
+@media (min-width: 90em) {
+  .hero__text .btns-container {
+    width: 70%;
+  }
+}
+.hero__text .btns-container .btn {
+  font-size: 1.4rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  padding: 1em;
+  width: 100%;
+  border-radius: 0.4em;
+  outline: none;
+  border: 0.2em solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  cursor: pointer;
+  transition: border-color 0.3s ease-out;
+}
+.hero__text .btns-container .btn:hover {
+  background-color: white;
+}
+.hero__text .btns-container .btn--chrome {
+  background-color: hsl(231, 69%, 60%);
+  color: white;
+  transition: background-color 0.2s ease-out;
+}
+.hero__text .btns-container .btn--chrome:hover {
+  color: hsl(231, 69%, 60%);
+  border-color: hsl(231, 69%, 60%);
+}
+.hero__text .btns-container .btn--firefox {
+  background-color: hsl(0, 0%, 97%);
+  color: rgba(35, 42, 69, 0.95);
+}
+.hero__text .btns-container .btn--firefox:hover {
+  border-color: rgba(35, 42, 69, 0.95);
 }
 
 header {
   position: fixed;
+  z-index: 1000;
   padding: 2em 1.5em;
   width: 100%;
   height: 6.019em;
@@ -33,8 +263,8 @@ header {
 }
 @media (min-width: 48em) {
   header {
-    height: 9.938em;
-    padding: 3.5em 5em;
+    height: 8.486em;
+    padding: 2.8em 5em;
   }
 }
 @media (min-width: 64em) {
@@ -45,7 +275,7 @@ header {
 }
 @media (min-width: 90em) {
   header {
-    padding: 3.5em 9.5em;
+    padding: 3.5em 8em;
   }
 }
 header .nav-section {
@@ -181,13 +411,13 @@ header .nav .ul__link {
   }
 }
 header .nav .ul__link:hover {
-  color: hsl(0, 94%, 66%);
+  color: hsl(0, 75%, 70%);
 }
 header .nav .ul__link.btn {
   padding: 0.5em 2em;
-  border: 0.1em solid hsl(0, 94%, 66%);
+  border: 0.2em solid hsl(0, 75%, 70%);
   font-family: "Rubik", sans-serif;
-  color: hsl(0, 94%, 66%);
+  color: hsl(0, 75%, 70%);
   border-radius: 0.3em;
   background-color: transparent;
   cursor: pointer;
@@ -196,30 +426,30 @@ header .nav .ul__link.btn {
 @media (min-width: 48em) {
   header .nav .ul__link.btn {
     color: white;
-    background-color: hsl(0, 94%, 66%);
+    background-color: hsl(0, 75%, 70%);
   }
   header .nav .ul__link.btn:hover {
-    color: hsl(0, 94%, 66%);
+    color: hsl(0, 75%, 70%);
     background-color: transparent;
   }
 }
 @media (min-width: 64em) {
   header .nav .ul__link.btn {
     color: white;
-    background-color: hsl(0, 94%, 66%);
+    background-color: hsl(0, 75%, 70%);
   }
   header .nav .ul__link.btn:hover {
-    color: hsl(0, 94%, 66%);
+    color: hsl(0, 75%, 70%);
     background-color: transparent;
   }
 }
 @media (min-width: 90em) {
   header .nav .ul__link.btn {
     color: white;
-    background-color: hsl(0, 94%, 66%);
+    background-color: hsl(0, 75%, 70%);
   }
   header .nav .ul__link.btn:hover {
-    color: hsl(0, 94%, 66%);
+    color: hsl(0, 75%, 70%);
     background-color: transparent;
   }
 }

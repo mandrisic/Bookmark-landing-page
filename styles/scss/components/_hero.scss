@@ -1,3 +1,157 @@
+@use '../global/mixins' as *;
+@use '../global/variables' as *;
+
 .hero {
-    padding: 5.5em 0 2em 0;
+    width: 100%;
+    padding: 5.8em 0;
+    overflow: hidden;
+    @include flexTemplate(column, space-between, center);
+    @include respond('tablet'){
+        @include flexTemplate(row-reverse, space-between, center);
+        padding: 8.5em 0 5em 5em;
+        gap: 1em;
+    }
+    @include respond('laptop'){
+        padding: 8.5em 0 4.5em 4.5em;
+        gap: 2em;
+    }
+    @include respond('desktop'){
+        padding: 10.5em 0 8em 8em;
+        gap: 4em;
+    }
+
+    &__img {
+        position: relative;
+        width: 100%;
+        padding: 2.2em .5em;
+        @include respond('tablet', 'laptop', 'desktop'){
+            padding: 0 1.5em;
+            flex: 1;
+        }
+
+        .image {
+            @include respond('laptop'){
+                width: 26em;
+                height: auto;
+            }
+            @include respond('desktop'){
+                width: 36em;
+                height: auto;
+            }
+        }
+
+        .shape {
+            position: absolute;
+            bottom: 2.2em;
+            right: 0;
+            z-index: -1;
+            background-color: $softBlue;
+            height: 60%;
+            width: 82%;
+            border-radius: 30em 0 0 30em;
+            @include respond('tablet'){
+                width: 72%;
+                bottom: -1em;
+            }
+            @include respond('laptop', 'desktop'){
+                height: 74%;
+                width: 72%;
+                bottom: -1.8em;
+            }
+        }
+    }
+
+    &__text {
+        @include flexTemplate(column, space-between, center);
+        padding: .5em 2em;
+        gap: 1.2em;
+        color: $veryDarkBlue;
+        text-align: center;
+        width: 100%;
+        @include respond('tablet', 'laptop', 'desktop'){
+            flex: 1;
+            @include flexTemplate(column, space-between, flex-start);
+            text-align: left;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            @include respond('tablet'){
+                font-size: 3.2rem;
+            }
+            @include respond('laptop'){
+                font-size: 3.8rem;
+            }
+            @include respond('desktop'){
+                font-size: 4.8rem;
+            }
+        }
+
+        p {
+            color: $grayishBlue;
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 1.5em;
+            @include respond('laptop'){
+                font-size: 1.6rem;
+            }
+            @include respond('desktop'){
+                font-size: 1.85rem;
+            }
+        }
+
+        .btns-container {
+            @include flexTemplate(row, space-between, center);
+            width: 100%;
+            gap: .5em;
+            padding: .5em 0;
+            @include respond('tablet'){
+                width: 90%;
+                gap: 1em;
+             }
+             @include respond('laptop'){
+                width: 86%;
+             }
+            @include respond('desktop'){
+               width: 70%;
+            }
+
+            .btn {
+                font-size: 1.4rem;
+                font-family: $font;
+                font-weight: 500;
+                padding: 1em;
+                width: 100%;
+                border-radius: .4em;
+                outline: none;
+                border: .2em solid transparent;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;  
+                cursor: pointer;
+                transition: border-color .3s ease-out;
+                &:hover {
+                    background-color: white;
+                }  
+
+                &--chrome {
+                    background-color: $softBlue;
+                    color: white;
+                    transition: background-color .2s ease-out;
+                    &:hover {
+                        color: $softBlue;
+                        border-color: $softBlue;
+                    } 
+                }
+
+                &--firefox {
+                    background-color: $softGray;
+                    color: $darkBg;
+                    &:hover {
+                        border-color: $darkBg;
+                    } 
+                }
+            }
+        }
+    }
 }
