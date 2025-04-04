@@ -1,0 +1,21 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+%shape {
+    position: absolute;
+    z-index: -1;
+    height: 11.2em;
+    width: 17em;
+    background-color: $softBlue;
+    @include respond('tablet'){
+        width: 19.5em;
+    }
+    @include respond('laptop'){
+        height: 14em;
+        width: 22em;
+    }
+    @include respond('desktop'){
+        height: 19.5em;
+        width: 35em;
+    }
+}

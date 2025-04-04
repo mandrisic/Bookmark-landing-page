@@ -1,4 +1,6 @@
 @use './variables' as *;
+@use './mixins' as *;
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +16,23 @@ img {
 }
 
 body {
+    @include flexTemplate(column, space-between, center);
+    padding-top: 5.8em 0;
+    gap: 6.7em;
     font-family: $font;
     font-size: $size;
     width: 100%;
+    @include respond('tablet'){
+        gap: 4em;
+    }
+    @include respond('laptop'){
+        gap: 2em;
+    }
+    @include respond('desktop'){
+        gap: 4em;
+    }
+}
+
+.hidden {
+    display: none;
 }

@@ -1,0 +1,286 @@
+@use '../global/mixins' as *;
+@use '../global/variables' as *;
+@use '../global/extends' as *;
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateX(-40px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+
+@keyframes fadeOut {
+    from { 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+    to { 
+        opacity: 0; 
+        transform: translateX(-40px); 
+    }
+}
+
+.features {
+    @include flexTemplate(column, space-between, center);
+    gap: 1em;
+    width: 100%;
+    text-align: center;
+    article {
+        @include respond('tablet'){
+            @include flexTemplate(column, space-between, center);
+            gap: .4em;
+            width: 63%;
+        }
+        @include respond('laptop'){
+            width: 50%;
+        }
+        @include respond('desktop'){
+            width: 45%;
+        }
+    
+        h2 {
+            padding: .7em 0 .1em 0;
+            font-size: 2.4rem;
+            color: $veryDarkBlue;
+            font-weight: 600;
+            @include respond('tablet'){
+                font-size: 2.6rem;
+            }
+            @include respond('laptop'){
+                font-size: 2.8rem;
+            }
+            @include respond('desktop'){
+                font-size: 3.2rem;
+            }
+        }
+
+        p {
+            padding: .7em 2em;
+            color: $grayishBlue;
+            font-size: 1.5rem;
+            line-height: 1.6em;
+            @include respond('tablet'){
+                font-size: 1.5rem;
+            }
+            @include respond('laptop'){
+                font-size: 1.6rem;
+            }
+            @include respond('desktop'){
+                font-size: 1.9rem;
+            }
+        }
+    }
+
+    .options {
+        width: 100%;
+        padding: .7em 2em;
+        @include flexTemplate(column, space-between, center);
+        @include respond('tablet', 'laptop', 'desktop'){
+            @include flexTemplate(row, center, center);
+        }
+
+        .option {
+            position: relative;
+            color: $grayishBlue;
+            font-weight: 400;
+            font-size: 1.7rem;
+            width: 100%;
+            border-bottom: .2em solid $softGray;
+            padding: 1em 0;
+            cursor: pointer;
+            transition: color .3s ease-out;
+            &:hover {
+                color: $softRed;
+            }
+            @include respond('tablet'){
+                width: 25%;
+                font-size: 1.5rem;
+            }
+            @include respond('laptop'){
+                width: 23%;
+                padding: 1.5em 0;
+                font-size: 1.6rem;
+            }
+            @include respond('desktop'){
+                width: 17%;
+                font-size: 1.7rem;
+            }
+
+            &--first {
+                border-top: .2em solid $softGray;
+                @include respond('tablet', 'laptop', 'desktop'){
+                    border-top: none;
+                }
+            }
+            &.active {
+                color: $veryDarkBlue;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 50%;
+                    height: .3em;
+                    background-color: $softRed;
+                    @include respond('tablet', 'laptop', 'desktop'){
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &__data {
+            @include flexTemplate(column, space-between, center);
+            gap: 2em;
+            width: 100%;
+            opacity: 1;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            &.fade-in {
+                animation: fadeIn 0.3s ease forwards;
+            }
+            
+            &.fade-out {
+                animation: fadeOut 0.3s ease forwards;
+            }
+            @include respond('tablet'){
+                @include flexTemplate(row, space-between, center);
+                gap: 3em;
+                height: 16em;
+            }
+            @include respond('laptop'){
+                @include flexTemplate(row, space-between, center);
+                gap: 5em;
+                height: 17em;
+            }
+            @include respond('desktop'){
+                @include flexTemplate(row, space-between, center);
+                gap: 12em;
+                height: 26em;
+            }
+        }
+
+        &__img {
+            position: relative;
+            width: 100%;
+            height: auto;
+            
+            img {
+                padding: 2.4em 2em;
+                @include respond('tablet'){
+                    padding: 2.4em 0 2.4em 2em;
+                    margin-left: 3em;
+                    width: 19em;
+                }
+                @include respond('laptop'){
+                    padding: 1.4em 0 1.4em 2em;
+                    margin-left: 5em;
+                    width: 21em;
+                }
+                @include respond('desktop'){
+                    padding: 2.4em 0 2.4em 2em;
+                    margin-left: 7em;
+                    width: auto;
+                    max-height: 27em;
+                }
+            }
+
+            .shape--left {
+                @extend %shape;
+                bottom: .5em;
+                left: -.1em;
+                border-radius: 0 30em 30em 0;
+                @include respond('tablet'){
+                    bottom: .6em;
+                }
+                @include respond('laptop'){
+                    bottom: -1.6em;
+                }
+                @include respond('desktop'){
+                    bottom: -2em;
+                }
+            }
+        }
+
+        &__text {
+            @include flexTemplate(column, space-between, center);
+            gap: .8em;
+            padding: 0 2em;
+            width: 100%;
+            @include respond('tablet', 'laptop', 'desktop'){
+                @include flexTemplate(column, space-between, flex-start);
+                text-align: left;
+                gap: 1.3em;
+            }
+
+            h3 {
+                font-size: 2.4rem;
+                font-weight: 600;
+                color: $veryDarkBlue;
+                @include respond('tablet'){
+                    font-size: 2.6rem;
+                }
+                @include respond('laptop'){
+                    font-size: 2.8rem;
+                }
+                @include respond('desktop'){
+                    font-size: 3.2rem;
+                }
+            }
+
+            .description {
+                font-size: 1.5rem;
+                color: $grayishBlue;
+                line-height: 1.8em;
+                
+                @include respond('tablet'){
+                    font-size: 1.4rem;
+                    line-height: 1.6em;
+                    width: 88%;
+                }
+                @include respond('laptop'){
+                    font-size: 1.6rem;
+                    width: 90%;
+                }
+                @include respond('desktop'){
+                    font-size: 1.9rem;
+                    width: 77%;
+                }
+            }
+
+            .info {
+                display: none;
+                @include respond('tablet', 'laptop', 'desktop'){
+                   display: block;
+                   background-color: $softBlue;
+                   color: $softGray;
+                   font-family: $font;
+                   font-size: 1.5rem;
+                   border: .2em solid transparent;
+                   outline: none;
+                   border-radius: .4em;
+                   cursor: pointer;
+                   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;  
+                   transition: background-color .2s ease-out, border-color .2s ease-out, color .2s ease-out;
+                    &:hover {
+                        color: $softBlue;
+                        background-color: white;
+                        border-color: $softBlue;
+                    } 
+                }
+                @include respond('tablet', 'laptop'){
+                    padding: .6em 1.6em;
+                }
+                @include respond('desktop'){
+                    padding: .8em 1.6em;
+                }
+            }
+        }
+    }
+}
+  

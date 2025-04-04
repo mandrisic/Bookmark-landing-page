@@ -1,22 +1,23 @@
 @use '../global/mixins' as *;
 @use '../global/variables' as *;
+@use '../global/extends' as *;
 
 .hero {
     width: 100%;
-    padding: 5.8em 0;
+    margin-top: 5.5em;
     overflow: hidden;
     @include flexTemplate(column, space-between, center);
     @include respond('tablet'){
         @include flexTemplate(row-reverse, space-between, center);
-        padding: 8.5em 0 5em 5em;
+        padding: 8.5em 0 1.9em 5em;
         gap: 1em;
     }
     @include respond('laptop'){
-        padding: 8.5em 0 4.5em 4.5em;
+        padding: 4em 0 1.9em 4.5em;
         gap: 2em;
     }
     @include respond('desktop'){
-        padding: 10.5em 0 8em 8em;
+        padding: 5em 0 1.9em 8em;
         gap: 4em;
     }
 
@@ -41,22 +42,21 @@
         }
 
         .shape {
-            position: absolute;
+            @extend %shape;
             bottom: 2.2em;
             right: 0;
-            z-index: -1;
-            background-color: $softBlue;
-            height: 60%;
-            width: 82%;
             border-radius: 30em 0 0 30em;
             @include respond('tablet'){
-                width: 72%;
                 bottom: -1em;
+                width: 16.5em;
             }
-            @include respond('laptop', 'desktop'){
-                height: 74%;
-                width: 72%;
+            @include respond('laptop'){
+                bottom: -.5em;
+                width: 22em;
+            }
+            @include respond('desktop'){
                 bottom: -1.8em;
+                width: 27em;
             }
         }
     }
@@ -108,7 +108,7 @@
             gap: .5em;
             padding: .5em 0;
             @include respond('tablet'){
-                width: 90%;
+                width: 92%;
                 gap: 1em;
              }
              @include respond('laptop'){

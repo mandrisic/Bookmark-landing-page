@@ -20,6 +20,7 @@ header {
     }
 
     @include respond('desktop'){
+        height: 8.8em;
         padding: 3.5em 8em;
     }
 
@@ -183,8 +184,4 @@ header {
         }
     
     }
-}
-
-.hidden {
-    display: none;
 }
