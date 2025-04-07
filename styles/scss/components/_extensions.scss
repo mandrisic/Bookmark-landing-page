@@ -1,0 +1,206 @@
+@use '../global/mixins' as *;
+@use '../global/variables' as *;
+@use '../global/extends' as *;
+
+.extensions {
+    @include flexTemplate(column, space-between, center);
+    gap: .4em;
+    width: 100%;
+    text-align: center;
+    padding: .7em 2em;
+    @include respond('tablet'){
+        padding: .5em 5em;
+        gap: 1em;
+    }
+    @include respond('laptop'){
+        padding: 4.5em 9em;
+    }
+    @include respond('desktop'){
+        padding: 4.5em 14em;
+    }
+
+    h2 {
+        padding: .7em 0 .1em 0;
+        font-size: 2.4rem;
+        color: $veryDarkBlue;
+        font-weight: 600;
+        @include respond('tablet'){
+            font-size: 2.6rem;
+        }
+        @include respond('laptop'){
+            font-size: 2.8rem;
+        }
+        @include respond('desktop'){
+            font-size: 3.2rem;
+        }
+    }
+
+    p {
+        color: $grayishBlue;
+        font-size: 1.5rem;
+        line-height: 1.6em;
+        @include respond('tablet'){
+            font-size: 1.5rem;
+            width: 75%;
+        }
+        @include respond('laptop'){
+            font-size: 1.6rem;
+            width: 65%;
+        }
+
+        @include respond('desktop'){
+            font-size: 1.9rem;
+        }
+    }
+
+    .cards {
+        @include flexTemplate(column, space-between, center);
+        gap: 2.5em;
+        padding: 2em .5em;
+        width: 100%;
+        @include respond('tablet'){
+            @include flexTemplate(row, space-between, center);
+            gap: 1em;
+            padding: 1em .5em;
+        }
+        @include respond('laptop'){
+            gap: 1.5em;
+        }
+        @include respond('desktop'){
+            gap: 2em;
+        }
+    }
+
+    .card {
+        @include flexTemplate(column, space-between, center);
+        border-radius: 1em;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;  
+
+        &--firefox {
+            @include respond('tablet'){
+                transform: translateY(1em);
+            }
+            @include respond('laptop', 'desktop'){
+                transform: translateY(2em);
+            }
+        }
+
+        &--opera {
+            @include respond('tablet'){
+                transform: translateY(2em);
+            }
+            @include respond('laptop', 'desktop'){
+                transform: translateY(4em);
+            }
+        }
+        
+        &__info {
+            @include flexTemplate(column, center, center);
+            gap: 1.8em;
+            padding: 2.7em;
+            @include respond('tablet'){
+                padding: 1.2em 0;
+                width: 100%;
+            }
+            @include respond('laptop'){
+                padding: 1.5em 0;
+            }
+
+            @include respond('desktop'){
+                padding: 2.5em 0 2em 0;
+            }
+        }
+
+        &__logo {
+            width: 5.6em;
+            height: auto;
+            @include respond('tablet'){
+                width: 4em;
+            }
+            @include respond('laptop'){
+                width: 4.5em;
+            }
+            @include respond('desktop'){
+                width: 5.4em;
+            }
+        }
+
+        &__text {
+            @include flexTemplate(column, center, center);
+            gap: .4em;
+            width: 100%;
+            h3 {
+                font-size: 2rem;
+                color: $veryDarkBlue;
+                font-weight: 600;
+                @include respond('tablet', 'laptop'){
+                    font-size: 1.8rem;
+                }
+                @include respond('desktop'){
+                    font-size: 2rem;
+                }
+            }
+            p {
+                font-size: 1.6rem;
+                @include respond('tablet', 'laptop'){
+                    font-size: 1.4rem;
+                }
+                @include respond('desktop'){
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        &__install {
+           position: relative;
+           width: 100%;
+           padding: 1.4em;
+           @include respond('tablet'){
+                padding: 1.2em;
+            }
+
+           .dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+           }
+
+           button {
+            width: 100%;
+            padding: 1em;
+            background-color: $softBlue;
+            color: white;
+            border: 2px solid transparent;
+            outline: none;
+            font-family: $font;
+            border-radius: .4em;
+            font-size: 1.4rem;
+            font-weight: 400;
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;  
+            transition: background-color .2s ease-out, border-color .2s ease-out, color .2s ease-out;
+            &:hover {
+                color: $softBlue;
+                background-color: white;
+                border-color: $softBlue;
+            } 
+
+            @include respond('tablet'){
+                padding: .5em;
+                font-weight: 300;
+            }
+            @include respond('laptop'){
+                font-weight: 400;
+            }
+
+            @include respond('desktop'){
+                padding: 1em;
+            }
+           }
+        }
+    }
+
+}

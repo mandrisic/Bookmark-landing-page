@@ -69,6 +69,286 @@ body {
   }
 }
 
+.extensions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4em;
+  width: 100%;
+  text-align: center;
+  padding: 0.7em 2em;
+}
+@media (min-width: 48em) {
+  .extensions {
+    padding: 0.5em 5em;
+    gap: 1em;
+  }
+}
+@media (min-width: 64em) {
+  .extensions {
+    padding: 4.5em 9em;
+  }
+}
+@media (min-width: 90em) {
+  .extensions {
+    padding: 4.5em 14em;
+  }
+}
+.extensions h2 {
+  padding: 0.7em 0 0.1em 0;
+  font-size: 2.4rem;
+  color: hsl(229, 31%, 21%);
+  font-weight: 600;
+}
+@media (min-width: 48em) {
+  .extensions h2 {
+    font-size: 2.6rem;
+  }
+}
+@media (min-width: 64em) {
+  .extensions h2 {
+    font-size: 2.8rem;
+  }
+}
+@media (min-width: 90em) {
+  .extensions h2 {
+    font-size: 3.2rem;
+  }
+}
+.extensions p {
+  color: hsl(229, 8%, 60%);
+  font-size: 1.5rem;
+  line-height: 1.6em;
+}
+@media (min-width: 48em) {
+  .extensions p {
+    font-size: 1.5rem;
+    width: 75%;
+  }
+}
+@media (min-width: 64em) {
+  .extensions p {
+    font-size: 1.6rem;
+    width: 65%;
+  }
+}
+@media (min-width: 90em) {
+  .extensions p {
+    font-size: 1.9rem;
+  }
+}
+.extensions .cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5em;
+  padding: 2em 0.5em;
+  width: 100%;
+}
+@media (min-width: 48em) {
+  .extensions .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0.5em;
+  }
+}
+@media (min-width: 64em) {
+  .extensions .cards {
+    gap: 1.5em;
+  }
+}
+@media (min-width: 90em) {
+  .extensions .cards {
+    gap: 2em;
+  }
+}
+.extensions .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1em;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+@media (min-width: 48em) {
+  .extensions .card--firefox {
+    transform: translateY(1em);
+  }
+}
+@media (min-width: 64em) {
+  .extensions .card--firefox {
+    transform: translateY(2em);
+  }
+}
+@media (min-width: 90em) {
+  .extensions .card--firefox {
+    transform: translateY(2em);
+  }
+}
+@media (min-width: 48em) {
+  .extensions .card--opera {
+    transform: translateY(2em);
+  }
+}
+@media (min-width: 64em) {
+  .extensions .card--opera {
+    transform: translateY(4em);
+  }
+}
+@media (min-width: 90em) {
+  .extensions .card--opera {
+    transform: translateY(4em);
+  }
+}
+.extensions .card__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8em;
+  padding: 2.7em;
+}
+@media (min-width: 48em) {
+  .extensions .card__info {
+    padding: 1.2em 0;
+    width: 100%;
+  }
+}
+@media (min-width: 64em) {
+  .extensions .card__info {
+    padding: 1.5em 0;
+  }
+}
+@media (min-width: 90em) {
+  .extensions .card__info {
+    padding: 2.5em 0 2em 0;
+  }
+}
+.extensions .card__logo {
+  width: 5.6em;
+  height: auto;
+}
+@media (min-width: 48em) {
+  .extensions .card__logo {
+    width: 4em;
+  }
+}
+@media (min-width: 64em) {
+  .extensions .card__logo {
+    width: 4.5em;
+  }
+}
+@media (min-width: 90em) {
+  .extensions .card__logo {
+    width: 5.4em;
+  }
+}
+.extensions .card__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+  width: 100%;
+}
+.extensions .card__text h3 {
+  font-size: 2rem;
+  color: hsl(229, 31%, 21%);
+  font-weight: 600;
+}
+@media (min-width: 48em) {
+  .extensions .card__text h3 {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 64em) {
+  .extensions .card__text h3 {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 90em) {
+  .extensions .card__text h3 {
+    font-size: 2rem;
+  }
+}
+.extensions .card__text p {
+  font-size: 1.6rem;
+}
+@media (min-width: 48em) {
+  .extensions .card__text p {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 64em) {
+  .extensions .card__text p {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 90em) {
+  .extensions .card__text p {
+    font-size: 1.4rem;
+  }
+}
+.extensions .card__install {
+  position: relative;
+  width: 100%;
+  padding: 1.4em;
+}
+@media (min-width: 48em) {
+  .extensions .card__install {
+    padding: 1.2em;
+  }
+}
+.extensions .card__install .dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+.extensions .card__install button {
+  width: 100%;
+  padding: 1em;
+  background-color: hsl(231, 69%, 60%);
+  color: white;
+  border: 2px solid transparent;
+  outline: none;
+  font-family: "Rubik", sans-serif;
+  border-radius: 0.4em;
+  font-size: 1.4rem;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+}
+.extensions .card__install button:hover {
+  color: hsl(231, 69%, 60%);
+  background-color: white;
+  border-color: hsl(231, 69%, 60%);
+}
+@media (min-width: 48em) {
+  .extensions .card__install button {
+    padding: 0.5em;
+    font-weight: 300;
+  }
+}
+@media (min-width: 64em) {
+  .extensions .card__install button {
+    font-weight: 400;
+  }
+}
+@media (min-width: 90em) {
+  .extensions .card__install button {
+    padding: 1em;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -446,8 +726,8 @@ body {
 }
 @media (min-width: 90em) {
   .features .options__text .description {
-    font-size: 1.9rem;
-    width: 77%;
+    font-size: 1.8rem;
+    width: 78%;
   }
 }
 .features .options__text .info {
