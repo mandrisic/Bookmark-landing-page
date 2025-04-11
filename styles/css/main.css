@@ -144,7 +144,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 2.5em;
-  padding: 2em 0.5em;
+  padding: 2em 0.5em 0 0.5em;
   width: 100%;
 }
 @media (min-width: 48em) {
@@ -212,7 +212,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1.8em;
-  padding: 2.7em;
+  padding: 2em;
 }
 @media (min-width: 48em) {
   .extensions .card__info {
@@ -346,6 +346,214 @@ body {
 @media (min-width: 90em) {
   .extensions .card__install button {
     padding: 1em;
+  }
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  text-align: center;
+  padding: 0 2em;
+}
+@media (min-width: 48em) {
+  .faq {
+    padding: 0.5em 5em;
+  }
+}
+@media (min-width: 64em) {
+  .faq {
+    padding: 1.5em 9em;
+  }
+}
+@media (min-width: 90em) {
+  .faq {
+    padding: 1em 14em;
+  }
+}
+.faq h2 {
+  padding: 0.7em 0 0.1em 0;
+  font-size: 2.4rem;
+  color: hsl(229, 31%, 21%);
+  font-weight: 600;
+}
+@media (min-width: 48em) {
+  .faq h2 {
+    font-size: 2.6rem;
+  }
+}
+@media (min-width: 64em) {
+  .faq h2 {
+    font-size: 2.8rem;
+  }
+}
+@media (min-width: 90em) {
+  .faq h2 {
+    font-size: 3.1rem;
+  }
+}
+.faq p {
+  color: hsl(229, 8%, 60%);
+  font-size: 1.5rem;
+  line-height: 1.6em;
+}
+@media (min-width: 48em) {
+  .faq p {
+    font-size: 1.5rem;
+    width: 70%;
+  }
+}
+@media (min-width: 64em) {
+  .faq p {
+    font-size: 1.6rem;
+    width: 63%;
+  }
+}
+@media (min-width: 90em) {
+  .faq p {
+    font-size: 1.9rem;
+    width: 60%;
+  }
+}
+.faq__questions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 2em 0;
+}
+@media (min-width: 48em) {
+  .faq__questions {
+    width: 70%;
+  }
+}
+@media (min-width: 64em) {
+  .faq__questions {
+    width: 63%;
+  }
+}
+@media (min-width: 90em) {
+  .faq__questions {
+    width: 60%;
+  }
+}
+.faq__questions details {
+  position: relative;
+  list-style: none;
+  width: 100%;
+  text-align: left;
+  padding: 0.5em 0;
+  border-bottom: 2px solid hsl(0, 0%, 97%);
+}
+@media (min-width: 48em) {
+  .faq__questions details:first-of-type {
+    border-top: 2px solid hsl(0, 0%, 97%);
+  }
+}
+@media (min-width: 64em) {
+  .faq__questions details:first-of-type {
+    border-top: 2px solid hsl(0, 0%, 97%);
+  }
+}
+@media (min-width: 90em) {
+  .faq__questions details:first-of-type {
+    border-top: 2px solid hsl(0, 0%, 97%);
+  }
+}
+.faq__questions details summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.2em;
+  width: 100%;
+  font-size: 1.52rem;
+  font-weight: 400;
+  color: hsl(229, 31%, 21%);
+  padding: 0.8em 0;
+  cursor: pointer;
+  transition: color 0.3s ease-out;
+}
+.faq__questions details summary:hover {
+  color: hsl(0, 75%, 70%);
+}
+@media (min-width: 48em) {
+  .faq__questions details summary {
+    padding-right: 0.5em;
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 64em) {
+  .faq__questions details summary {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 90em) {
+  .faq__questions details summary {
+    font-size: 1.9rem;
+  }
+}
+.faq__questions details summary .arrow {
+  stroke: hsl(231, 69%, 60%);
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-out;
+}
+.faq__questions details p {
+  width: 100%;
+  padding: 1.2em 0;
+  font-size: 1.5rem;
+  line-height: 2em;
+  color: hsl(229, 8%, 60%);
+}
+@media (min-width: 90em) {
+  .faq__questions details p {
+    font-size: 1.9rem;
+  }
+}
+.faq__questions details[open] summary .arrow {
+  stroke: hsl(0, 75%, 70%);
+  transform: rotate(180deg);
+}
+.faq button {
+  width: 8em;
+  padding: 1em;
+  background-color: hsl(231, 69%, 60%);
+  color: white;
+  border: 2px solid transparent;
+  outline: none;
+  font-family: "Rubik", sans-serif;
+  border-radius: 0.4em;
+  font-size: 1.4rem;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+}
+.faq button:hover {
+  color: hsl(231, 69%, 60%);
+  background-color: white;
+  border-color: hsl(231, 69%, 60%);
+}
+@media (min-width: 48em) {
+  .faq button {
+    padding: 0.5em;
+    font-weight: 300;
+  }
+}
+@media (min-width: 64em) {
+  .faq button {
+    font-weight: 400;
+    padding: 0.8em;
+  }
+}
+@media (min-width: 90em) {
+  .faq button {
+    padding: 0.9em;
+    border-radius: 0.5em;
   }
 }
 

@@ -1,0 +1,167 @@
+@use '../global/mixins' as *;
+@use '../global/variables' as *;
+@use '../global/extends' as *;
+
+.faq {
+    @include flexTemplate(column, space-between, center);
+    gap: 1em;
+    width: 100%;
+    text-align: center;
+    padding: 0 2em;
+    @include respond('tablet'){
+        padding: .5em 5em;
+    }
+    @include respond('laptop'){
+        padding: 1.5em 9em;
+    }
+    @include respond('desktop'){
+        padding: 1em 14em;
+    }
+
+    h2 {
+        padding: .7em 0 .1em 0;
+        font-size: 2.4rem;
+        color: $veryDarkBlue;
+        font-weight: 600;
+        @include respond('tablet'){
+            font-size: 2.6rem;
+        }
+        @include respond('laptop'){
+            font-size: 2.8rem;
+        }
+        @include respond('desktop'){
+            font-size: 3.1rem;
+        }
+    }
+
+    p {
+        color: $grayishBlue;
+        font-size: 1.5rem;
+        line-height: 1.6em;
+        @include respond('tablet'){
+            font-size: 1.5rem;
+            width: 70%;
+        }
+        @include respond('laptop'){
+            font-size: 1.6rem;
+            width: 63%;
+        }
+
+        @include respond('desktop'){
+            font-size: 1.9rem;
+            width: 60%;
+        }
+    }
+
+    &__questions {
+        @include flexTemplate(column, space-between, center);
+        width: 100%;
+        margin: 2em 0;
+        @include respond('tablet'){
+            width: 70%;
+        }
+        @include respond('laptop'){
+            width: 63%;
+        }
+        @include respond('desktop'){
+            width: 60%;
+        }
+
+        details {
+            position: relative;
+            list-style: none; 
+            width: 100%;
+            text-align: left;
+            padding: .5em 0;
+            border-bottom: 2px solid $softGray;
+            &:first-of-type {
+                @include respond('tablet', 'laptop', 'desktop'){
+                    border-top: 2px solid $softGray;
+                }
+            }
+            
+            summary {
+                @include flexTemplate(row, space-between, center);
+                gap: .2em;
+                width: 100%;
+                font-size: 1.52rem;
+                font-weight: 400;
+                color: $veryDarkBlue;
+                padding: .8em 0;
+                cursor: pointer;
+                transition: color .3s ease-out;
+                &:hover {
+                    color: $softRed;
+                }
+                @include respond('tablet'){
+                    padding-right: .5em;
+                    font-size: 1.5rem;
+                }
+                @include respond('laptop'){
+                    font-size: 1.6rem;
+                }
+                @include respond('desktop'){
+                    font-size: 1.9rem;
+                }
+                
+                .arrow {
+                    stroke: $softBlue;
+                    transform: rotate(0deg);
+                    transition: transform .3s ease-out;
+                }
+            }   
+
+            p {
+                width: 100%;
+                padding: 1.2em 0;
+                font-size: 1.5rem;
+                line-height: 2em;
+                color: $grayishBlue;
+                @include respond('desktop'){
+                    font-size: 1.9rem;
+                }
+            }
+
+            &[open] summary .arrow {
+                stroke: $softRed;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    button {
+        width: 8em;
+        padding: 1em;
+        background-color: $softBlue;
+        color: white;
+        border: 2px solid transparent;
+        outline: none;
+        font-family: $font;
+        border-radius: .4em;
+        font-size: 1.4rem;
+        font-weight: 400;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;  
+        transition: background-color .2s ease-out, border-color .2s ease-out, color .2s ease-out;
+        &:hover {
+            color: $softBlue;
+            background-color: white;
+            border-color: $softBlue;
+        } 
+
+        @include respond('tablet'){
+            padding: .5em;
+            font-weight: 300;
+        }
+        @include respond('laptop'){
+            font-weight: 400;
+            padding: .8em;
+        }
+
+        @include respond('desktop'){
+            padding: .9em;
+            border-radius: .5em;
+        }
+    }
+    
+}
