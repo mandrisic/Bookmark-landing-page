@@ -25,10 +25,17 @@
 }
 
 .features {
+    scroll-margin-top: 5em;
     @include flexTemplate(column, space-between, center);
     gap: 1em;
     width: 100%;
     text-align: center;
+    @include respond('tablet'){
+        scroll-margin-top: 7em;
+    }
+    @include respond('desktop'){
+        scroll-margin-top: 8em;
+    }
     article {
         @include respond('tablet'){
             @include flexTemplate(column, space-between, center);

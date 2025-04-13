@@ -8,15 +8,19 @@
     width: 100%;
     text-align: center;
     padding: .7em 2em;
+    scroll-margin-top: 5.5em;
     @include respond('tablet'){
         padding: .5em 5em;
         gap: 1em;
+        scroll-margin-top: 6em;
     }
     @include respond('laptop'){
         padding: 4.5em 9em;
+        scroll-margin-top: 1.5em;
     }
     @include respond('desktop'){
         padding: 4.5em 14em;
+        scroll-margin-top: 6em;
     }
 
     h2 {

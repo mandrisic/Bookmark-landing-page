@@ -1,0 +1,260 @@
+@use '../global/mixins' as *;
+@use '../global/variables' as *;
+@use '../global/extends' as *;
+
+footer {
+    @include flexTemplate(column, space-between, center);
+    width: 100%;
+    background-color: $veryDarkBlue;
+    scroll-margin-top: 5em;
+
+    .newsletter {
+        background-color: $softBlue;
+        @include flexTemplate(column, space-between, center);
+        gap: 2em;
+        width: 100%;
+        text-align: center;
+        padding: 3.7em 1.5em;
+        @include respond('tablet'){
+            padding: 2.8em 5em;
+        }
+
+
+        &__heading {
+            @include flexTemplate(column, space-between, center);
+            @include respond('desktop'){
+                gap: 1.5em;
+            }
+            
+        h2 {
+            padding: .5em 0 .1em 0;
+            font-size: 2.4rem;
+            color: $softGray;
+            font-weight: 500;
+            @include respond('tablet'){
+                font-size: 2.6rem;
+                width: 80%;
+            }
+            @include respond('laptop'){
+                font-size: 2.8rem;
+            }
+            @include respond('desktop'){
+                font-size: 3.1rem;
+            }
+        }
+
+        p {
+            color: $softGray;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            letter-spacing: .3em;
+            @include respond('tablet'){
+                font-size: 1.4rem;
+                width: 70%;
+            }
+            @include respond('laptop'){
+                width: 63%;
+            }
+
+            @include respond('desktop'){
+                font-size: 1.3rem;
+                width: 80%;
+            }
+        }
+    }
+
+        &__form {
+            width: 100%;
+            @include flexTemplate(column, space-between, center);
+            gap: 1em;
+            @include respond('tablet', 'laptop', 'desktop'){
+                @include flexTemplate(row, space-between, flex-start);
+                width: 25em;
+            }
+            
+            .error {
+                @include flexTemplate(column, space-between, flex-start);
+                width: 100%;
+                width: 100%;
+                background-color: transparent;
+                border-radius: .5em;
+                border: 2px solid transparent;
+                transition: background-color .3s ease-out, border-color .3s ease-out;
+
+                &.active {
+                    background-color: $red;
+                    border-color: $red;
+                }
+
+                &__msg {
+                    padding: .25em;
+                    font-style: italic;
+                    font-size: 1.1rem;
+                    color: white; 
+                    @include respond('laptop','desktop'){
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+
+            .email-container {
+                position: relative;
+                width: 100%;
+                @include flexTemplate(row, space-between, center);
+                border-radius: .5em;
+                input {
+                    width: 100%;
+                    padding: 1em;
+                    border-radius: .5em;
+                    font-family: $font;
+                    font-size: 1.4rem;
+                    outline: none;
+                    border: 2px solid transparent;
+                    &::placeholder {
+                        color: $gray;
+                    }
+                }
+
+                .error__icon {
+                    position: absolute;
+                    right: .5em;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            button {
+                width: 100%;
+                background-color: $red;
+                color: $softGray;
+                padding: 1em;
+                border-radius: .5em;
+                font-family: $font;
+                font-size: 1.4rem;
+                outline: none;
+                border: 2px solid transparent;
+                cursor: pointer;
+                transition: background-color .2s ease-out, border-color .2s ease-out, color .2s ease-out;
+                &:hover {
+                    color: $softRed;
+                    background-color: white;
+                    border-color: $softRed;
+                }
+                @include respond('tablet'){
+                    width: 12em;
+                    font-weight: 500;
+                }
+                @include respond('desktop'){
+                    width: 13em;
+                }
+            }
+        }
+    }
+
+    .footer__nav {
+        @include flexTemplate(column, space-between, center);
+        padding: 2em;
+        gap: 2em;
+        @include respond('tablet'){
+            @include flexTemplate(row, space-between, center);
+            width: 100%;
+            padding: 2.8em 5em 1.8em 5em;
+        }
+        @include respond('laptop'){
+            padding: 2em 4.5em;
+        }
+        @include respond('desktop'){
+            padding: 2em 8em;
+        }
+
+       .nav-main {
+            @include flexTemplate(column, space-between, center);
+            gap: 2em;
+            @include respond('tablet'){
+                @include flexTemplate(row, flex-start, center);
+                width: 100%;
+            }
+            @include respond('laptop', 'desktop'){
+                gap: 4em;
+            }
+
+            #logo {
+                width: 8em;
+                cursor: pointer;
+
+                path {
+                    fill: white;
+                }
+            } 
+
+            .nav {
+                .ul {
+                    @include flexTemplate(column, space-between, center);
+                    gap: 1.5em;
+                    list-style-type: none;
+                    @include respond('tablet'){
+                        @include flexTemplate(row, space-between, center);
+                    }
+                    @include respond('laptop', 'desktop'){
+                        gap: 2.8em;
+                    }
+
+                    &__item a {
+                        color: $softGray;
+                        font-weight: 300;
+                        letter-spacing: .1em;
+                        font-family: $font;
+                        font-size: 1.5rem;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        transition: color .3s ease-out;
+                        @include respond('laptop', 'desktop'){
+                            font-size: 1.3rem;
+                        }
+
+                        &:hover {
+                            color: $softRed;
+                        }
+                    }
+                }
+            }
+       }
+
+        .nav-socials {
+            @include flexTemplate(row, center, center);
+            gap: 2em;
+            svg {
+                cursor: pointer;
+                path {
+                    fill: white;
+                    transition: fill .3s ease-out;
+                    &:hover {
+                        fill: $softRed;
+                    }
+                }
+            }
+        }
+    }
+
+    .attribution {
+        color: $softGray;
+        font-size: 1.2rem;
+        padding: 2em 0;
+
+        @include respond('tablet', 'laptop'){
+            width: 100%;
+            font-size: 1.4rem;
+            padding: 1em 8em 2em 8em;
+            text-align: center;
+        }
+
+        @include respond('desktop'){
+            font-size: 1.6rem;
+        }
+
+        a {
+            color: $softRed;
+        }
+    }
+}

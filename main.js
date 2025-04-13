@@ -1,11 +1,17 @@
 const hamb = document.getElementById('hamburger');
 const header = document.querySelector('header');
 const close = document.getElementById('close');
+const links = header.querySelectorAll('.ul__link');
 const options = document.querySelectorAll('.option');
 const tabHeading = document.querySelector('.options__text h3');
 const tabDesc = document.querySelector('.description');
 const tabImg = document.querySelector('.options__img');
 const tabContent = document.querySelector('.options__data');
+const emailInput = document.getElementById('email');
+const submit = document.getElementById('submit');
+const error = document.querySelector('.error');
+const errorIcon = document.querySelector('.error__icon');
+const errorMsg = document.querySelector('.error__msg');
 
 const data = [{
     heading: 'Bookmark in one click',
@@ -29,6 +35,14 @@ const handleNav = () => {
     hamb.classList.toggle('hidden');
     close.classList.toggle('hidden');
 }
+
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth < 768) {
+      handleNav();
+    }
+  });
+})
 
 hamb.addEventListener('click', handleNav);
 close.addEventListener('click', handleNav);
@@ -73,3 +87,26 @@ const handleTab = (event) => {
 options.forEach(option => option.addEventListener('click', handleTab));
 updateContent(activeIndex);
 options[activeIndex].classList.add('active');
+
+// email submit
+const checkEmail = (email) => {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+}
+
+const handleSubmit = () => {
+  if(!checkEmail(emailInput.value)){
+    error.classList.add('active');
+    errorIcon.classList.remove('hidden');
+    errorMsg.classList.remove('hidden');
+    console.log('it was wrong');
+  } else {
+    error.classList.remove('active');
+    errorIcon.classList.add('hidden');
+    errorMsg.classList.add('hidden');
+    emailInput.value = '';
+    console.log('it was valid');
+  }
+}
+
+submit.addEventListener('click', handleSubmit);

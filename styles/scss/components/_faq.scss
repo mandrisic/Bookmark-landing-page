@@ -73,10 +73,10 @@
             width: 100%;
             text-align: left;
             padding: .5em 0;
-            border-bottom: 2px solid $softGray;
+            border-bottom: 1px solid $gray;
             &:first-of-type {
                 @include respond('tablet', 'laptop', 'desktop'){
-                    border-top: 2px solid $softGray;
+                    border-top: 1px solid $gray;
                 }
             }
             
